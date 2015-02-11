@@ -11,8 +11,8 @@ class GeoFilterSet(FilterSet):
             'filter_class': GeometryFilter
         },
     }
+    LOOKUP_TYPES = sorted(ALL_TERMS)
 
-    def __new__(cls, *args, **kwargs):
-        cls.filter_overrides.update(cls.GEOFILTER_FOR_DBFIELD_DEFAULTS)
-        cls.LOOKUP_TYPES = sorted(ALL_TERMS)
-        return super(GeoFilterSet, cls).__new__(cls)
+    def __init__(self, *args, **kwargs):
+        self.filter_overrides.update(self.GEOFILTER_FOR_DBFIELD_DEFAULTS)
+        return super(GeoFilterSet, self).__init__(*args, **kwargs)
