@@ -12,7 +12,7 @@ class TestCommand(test):
 
 setup(
     name='djangorestframework-gis',
-    version=get_version() + '-3',
+    version=get_version() + '.post3',
     url='https://github.com/dmeehan/django-rest-framework-gis',
     license='BSD',
     author='Douglas Meehan',
